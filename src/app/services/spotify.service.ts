@@ -40,6 +40,17 @@ export class SpotifyService{
           'Authorization': ''
         });   
         //return this.http.get('https://api.spotify.com/v1/search?q=ed%20sheeran&type=artist&limit=15', { headers });
-        return this.http.get(`https://api.spotify.com/v1/search?q=${ termino }&type=artist&limit=15`, { headers });                  
+        /*
+        return this.http.get(`https://api.spotify.com/v1/search?q=${ termino }&type=artist&limit=15`, { headers });          
+        */
+
+        // se puede poner en una linea "=> data['artists'].items"
+        /*
+        return this.http.get(`https://api.spotify.com/v1/search?q=${ termino }&type=artist&limit=15`, { headers }).pipe( map( data => {
+              return data['artists'].items;
+        } ));        
+        */
+        return this.http.get(`https://api.spotify.com/v1/search?q=${ termino }&type=artist&limit=15`, { headers }).pipe( map( data => data['artists'].items));          
+
     }
 }
