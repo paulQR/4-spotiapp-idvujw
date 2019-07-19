@@ -18,7 +18,7 @@ export class SpotifyService{
 
     getNewReleases(){
         const headers = new HttpHeaders({
-          'Authorization': ''
+          'Authorization': 'Bearer BQAi0_UkT3m2tjJWsTXEKHSp.....'
         });
         /*
           this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=5', { headers }).subscribe(data =>{
@@ -30,14 +30,20 @@ export class SpotifyService{
           console.log(data);
         });
         */
+
+        /*
         return this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=20', { headers }).pipe( map( data => {
               return data['albums'].items;
-        } ));        
+        } ));     
+        */  
+
+        return this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=20', { headers }).pipe( map( data => data['albums'].items ));
+
     }
 
     getArtista(termino: string){
         const headers = new HttpHeaders({
-          'Authorization': ''
+          'Authorization': 'Bearer BQAi0_UkT3m2tjJWsTXEKHSp.....'
         });   
         //return this.http.get('https://api.spotify.com/v1/search?q=ed%20sheeran&type=artist&limit=15', { headers });
         /*
