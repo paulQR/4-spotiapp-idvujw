@@ -20,9 +20,15 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 // importar rutas
 import { ROUTES } from './app.routes';
 
+// services
+import { SpotifyService } from './services/spotify.service';
+
 @NgModule({
   imports:      [ BrowserModule, HttpClientModule, FormsModule, RouterModule.forRoot(ROUTES, {useHash:true}) ],
   declarations: [ AppComponent, HelloComponent, HomeComponent, ArtistaComponent, SearchComponent, NavbarComponent ],
+  providers:[
+    SpotifyService
+  ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
