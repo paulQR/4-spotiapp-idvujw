@@ -23,8 +23,11 @@ export class SpotifyService{
             console.log(data);
           });        
         */
+        /*
         this.http.get('https://api.spotify.com/v1/browse/new-releases', { headers }).subscribe(data =>{
           console.log(data);
         });
+        */
+        this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=20', { headers });        
     }
 }
