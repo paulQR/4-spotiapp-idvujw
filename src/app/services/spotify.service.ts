@@ -30,4 +30,11 @@ export class SpotifyService{
         */
         return this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=20', { headers });        
     }
+
+    getArtista(termino: string){
+        const headers = new HttpHeaders({
+          'Authorization': ''
+        });   
+        return this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=20', { headers });                  
+    }
 }

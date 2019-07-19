@@ -7,5 +7,7 @@ import{Component} from '@angular/core';
 export class SearchComponent {
     constructor(){}
 
-    buscar(){}
+    buscar(termino: string){
+      console.log(termino);
+    }
 }
