@@ -35,6 +35,6 @@ export class SpotifyService{
         const headers = new HttpHeaders({
           'Authorization': ''
         });   
-        return this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=20', { headers });                  
+        return this.http.get('https://api.spotify.com/v1/search?q=ed%20sheeran&type=artist&limit=15', { headers });                  
     }
 }
