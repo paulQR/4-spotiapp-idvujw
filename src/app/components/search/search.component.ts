@@ -10,6 +10,8 @@ export class SearchComponent {
 
     buscar(termino: string){
       console.log(termino);
-      this.spotify.getArtista(termino);
+      this.spotify.getArtista(termino).subscribe( data => {
+          console.log(data);
+      });
     }
 }

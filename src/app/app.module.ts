@@ -21,14 +21,18 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { ROUTES } from './app.routes';
 
 // services
-import { SpotifyService } from './services/spotify.service';
+//import { SpotifyService } from './services/spotify.service';
+
+/*
+  providers:[
+    SpotifyService
+  ],
+*/
 
 @NgModule({
   imports:      [ BrowserModule, HttpClientModule, FormsModule, RouterModule.forRoot(ROUTES, {useHash:true}) ],
   declarations: [ AppComponent, HelloComponent, HomeComponent, ArtistaComponent, SearchComponent, NavbarComponent ],
-  providers:[
-    SpotifyService
-  ],
+  providers:[],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
