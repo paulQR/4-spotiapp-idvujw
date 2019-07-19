@@ -1,16 +1,20 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 
 /*
- forma automatica de importar servicio, no es necesario importarlo en el fichero
+ forma automatica de importar servicio, no es necesario (es opcional) importarlo en el fichero
  "app.module.app"
  */
 @Injectable({
   providedIn: 'root'
 })
-
-//@Injectable()
 export class SpotifyService{
-    constructor(){
+    constructor( private http: HttpClient){
         console.log('Spotify service listo');
+    }
+
+    getNewReleases(){
+        this.http.get('https://api.spotify.com/v1/browse/new-releases');
     }
 }
