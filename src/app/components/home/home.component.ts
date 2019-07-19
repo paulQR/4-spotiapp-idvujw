@@ -27,7 +27,7 @@ export class HomeComponent {
             this.nuevaCanciones = data.albums.items;
             */
             console.log(data);
-            this.nuevaCanciones = data.albums.items;            
+            this.nuevaCanciones = data;            
         });
     }
 

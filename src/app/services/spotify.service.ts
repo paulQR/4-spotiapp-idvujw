@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+// operador Map
+import { map } from 'rxjs/operators';
 
 /*
  forma automatica de importar servicio, no es necesario (es opcional) importarlo en el fichero
@@ -28,7 +30,9 @@ export class SpotifyService{
           console.log(data);
         });
         */
-        return this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=20', { headers });        
+        return this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=20', { headers }).pipe( map( data => {
+              return data['albums'].items;
+        } ));        
     }
 
     getArtista(termino: string){
